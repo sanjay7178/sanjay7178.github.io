@@ -2,9 +2,11 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
 import { getCollection } from "astro:content";
-import createSlug from "../lib/createSlug"
+import createSlug from "../lib/createSlug";
 
-const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
 
 const last_posts = posts.slice(0, 3);
 ---
@@ -12,20 +14,18 @@ const last_posts = posts.slice(0, 3);
 <BaseLayout sideBarActiveItemID="home">
   <div class="pb-12 mt-5">
     <div class="text-xl py-1">Hey there 👋</div>
-    <div class="text-5xl font-bold">I'm Manuel Ernesto</div>
-    <div class="text-3xl py-3 font-bold">Software Engineer and Entrepreneur</div>
+    <div class="text-5xl font-bold">I'm Sai Sanjay Kottakota</div>
+    <!-- <div class="text-3xl py-3 font-bold">Software Engineer and Entrepreneur</div> -->
     <div class="py-2">
       <text class="text-lg">
-        This is <b>Astrofy</b> a free and open-source template for your Personal Portfolio Website built with Astro and TailwindCSS.
-        Create in minutes a website with Blog, CV, Project Section, Store and RSS Feed. I hope you find
-        it useful!
+        I'm a Chaos Engineering Enthusiast, Open Source Contributor, and
+        Enthusiast in Deep Learning Applications. I also like Python and I'm
+        exploring new web frameworks ☁️
       </text>
     </div>
     <div class="mt-8">
-      <a class="btn" href="https://twitter.com/manuelernestog" target="_blank"> Let's connect!</a>
-      <a href="https://github.com/manuelernestog/astrofy" target="_blank" class="btn btn-outline ml-5">
-        Get This template
-      </a>
+      <a class="btn bg-black" style="color:white" href="https://linktr.ee/sanjay7178" target="_blank"> Let's connect!</a>
+      <a href=""mailto:saisanjay7660@gmail.com" class="btn btn-outline ml-5"> Contact</a>
     </div>
   </div>
 
@@ -34,33 +34,51 @@ const last_posts = posts.slice(0, 3);
   </div>
 
   <HorizontalCard
-    title="Demo Project 1"
+    title="vRevamp"
     img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
+    desc="A chrome extension for Enhancing VIT AP University Student portal experience in VTOP"
+    url="https://github.com/sanjay7178/vRevamp"
     badge="NEW"
   />
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Demo Project 2"
+    title="MultiModelFaceAntiSpoof"
     img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
+    desc="MultiModelFaceAntispoof using Multiple Open Source Spoofing models to Inference via Flask API"
+    url="https://github.com/sanjay7178/MultiModelFaceAntiSpoof"
+    badge="FOSS"
   />
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Demo Project 3"
+    title="DeepPairNet"
     img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
+    desc="Independently Contributed in creation and training of an hybrid Deep learning model for Facial Antispoofing detection in real time face biometrics using Pytorch Lightning and Inferencing the model in azure functions within a serverless architecture in comprising azure FrontDoor as Load balancer with Azure CDN"
+    url="https://github.com/DeepBinder-main/patch_light"
     badge="FOSS"
   />
+  <div class="divider my-0"></div>
+  <HorizontalCard
+    title="Flutter Guacamole"
+    img="/post_img.webp"
+    desc="an Open Source Flutter Application for Apache Guacamole using REST API’s"
+    url="https://github.com/DeepBinder-main/deepbinder-flutter"
+    badge="FOSS"
+  />
+  <div class="divider my-0"></div>
+  <HorizontalCard
+    title="IoT-ESp-32-CAM"
+    img="/post_img.webp"
+    desc="IoT Bird Species Identification and Motion Alert Using ESP32-CAM and CNN MobileNet V2 Achitecture"
+    url="https://github.com/iot-esp32-cam"
+    badge="IOT"
+  />
+  
 
-  <div>
+  <!-- <div>
     <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
-  </div>
+  </div> -->
 
-  {
+  <!-- {
     last_posts.map((post) => (
       <>
         <HorizontalCard
@@ -74,5 +92,5 @@ const last_posts = posts.slice(0, 3);
         <div class="divider my-0" />
       </>
     ))
-  }
+  } -->
 </BaseLayout>
